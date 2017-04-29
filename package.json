@@ -1,5 +1,5 @@
 {
-  "name": "hubot-hubot-puppet-utils",
+  "name": "hubot-puppet-utils",
   "description": "Hubot scripts for interacting with your Puppet infrastructure",
   "version": "0.0.0",
   "author": "gene@technicalissues.us",
@@ -9,11 +9,11 @@
 
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-hubot-puppet-utils.git"
+    "url": "git://github.com/genebean/hubot-puppet-utils.git"
   },
 
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-hubot-puppet-utils/issues"
+    "url": "https://github.com/genebean/hubot-puppet-utils/issues"
   },
 
   "dependencies": {

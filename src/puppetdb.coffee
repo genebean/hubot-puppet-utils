@@ -30,7 +30,7 @@ options =
 module.exports = (robot) ->
   robot.hear /when did ([\w\.-]+) last report(\?)?/i, (msg) ->
     host     = msg.match[1]
-    endpoint = "v3/nodes"
+    endpoint = "pdb/query/v4"
     cmd      = "curl -s \"#{url}/#{endpoint}/#{host}\" --cacert #{ca} --cert #{cert} --key #{key} --tlsv1"
 
     exec cmd, (error, stdout, stderr) ->
@@ -57,7 +57,7 @@ module.exports = (robot) ->
       if title.length isnt 0
         title = title + "::"
       title = title + part.charAt(0).toUpperCase() + part.slice(1).toLowerCase()
-    endpoint = "v3/resources"
+    endpoint = "pdb/query/v4/resources"
     cmd      = "curl -s \"#{url}/#{endpoint}/#{type}/#{title}\" --cacert #{ca} --cert #{cert} --key #{key} --tlsv1"
 
     exec cmd, options, (error, stdout, stderr) ->
@@ -88,7 +88,7 @@ module.exports = (robot) ->
       if title.length isnt 0
         title = title + "::"
       title = title + part.charAt(0).toUpperCase() + part.slice(1).toLowerCase()
-    endpoint   = "v3/resources"
+    endpoint   = "pdb/query/v4/resources"
     cmd        = "curl -s \"#{url}/#{endpoint}/#{type}/#{title}\" --cacert #{ca} --cert #{cert} --key #{key} --tlsv1"
 
     exec cmd, options, (error, stdout, stderr) ->

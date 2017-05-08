@@ -1,7 +1,7 @@
 {
   "name": "hubot-puppet-utils",
   "description": "Hubot scripts for interacting with your Puppet infrastructure",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "gene@technicalissues.us",
   "license": "MIT",
 

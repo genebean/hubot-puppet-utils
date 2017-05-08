@@ -28,8 +28,9 @@ options =
   'maxBuffer': buffer
 
 module.exports = (robot) ->
-  robot.hear /when did ([\w\.-]+) last report(\?)?/i, (msg) ->
-    host     = msg.match[1]
+  # The first match group is here because of Slack auto-linking domain names
+  robot.hear /when did (http:\/\/)?([\w\.-]+) last report(\?)?/i, (msg) ->
+    host     = msg.match[2]
     endpoint = "pdb/query/v4/nodes"
     cmd      = "curl -s \"#{url}/#{endpoint}/#{host}\" --cacert #{ca} --cert #{cert} --key #{key} --tlsv1"
 

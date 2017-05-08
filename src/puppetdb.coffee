@@ -30,7 +30,7 @@ options =
 module.exports = (robot) ->
   robot.hear /when did ([\w\.-]+) last report(\?)?/i, (msg) ->
     host     = msg.match[1]
-    endpoint = "pdb/query/v4"
+    endpoint = "pdb/query/v4/nodes"
     cmd      = "curl -s \"#{url}/#{endpoint}/#{host}\" --cacert #{ca} --cert #{cert} --key #{key} --tlsv1"
 
     exec cmd, (error, stdout, stderr) ->
